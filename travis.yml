@@ -1,0 +1,20 @@
+language: objective-c
+os: osx
+osx_image: xcode11.3   
+jobs:
+  include:
+  - script:
+    - travis_wait make production
+env:
+  global:
+    - tag=0.0.1
+branches:
+  only:
+  - master
+before_script:
+- brew tap tcnksm/ghr
+- brew install ghr
+script:
+- make production
+after_script:
+- ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" $tag releases/
