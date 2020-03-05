@@ -1,2 +1,2 @@
-# mnzz-framework-sdk
+# mnzz-sdk
 iOS Framework for POC
