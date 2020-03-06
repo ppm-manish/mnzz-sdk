@@ -23,9 +23,13 @@ commit_files() {
 
 upload_files() {
     echo "uploading files"
+    echo ${TOKEN}
   git remote add origin https://${TOKEN}@github.com/ppm-manish/mnzz-ios.git > /dev/null 2>&1
+    git remote -v
     echo "git remote set"
-  git push --set-upstream origin master 
+    git pull
+    ls -l
+  git push -u origin master 
     echo "git log after push"
     git log
 }

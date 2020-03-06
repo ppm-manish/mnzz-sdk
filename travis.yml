@@ -17,6 +17,6 @@ before_script:
 script:
 - make production
 after_success:
-  - .travis/push.sh
+  - ./push.sh
 after_script:
 - ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" $tag releases/
