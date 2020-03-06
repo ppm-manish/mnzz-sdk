@@ -7,7 +7,7 @@ jobs:
     - travis_wait make production
 env:
   global:
-    - tag=1.0.2
+    - tag=1.0.3
 branches:
   only:
   - master
@@ -18,5 +18,4 @@ script:
 - make production
 after_success:
   - ./push.sh
-after_script:
-- ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" $tag releases/
+  - ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" $tag releases/
