@@ -7,7 +7,7 @@ jobs:
     - travis_wait make production
 env:
   global:
-    - tag=1.0.1
+    - tag=1.0.2
 branches:
   only:
   - master

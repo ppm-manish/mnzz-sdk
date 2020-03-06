@@ -94,5 +94,5 @@ iOSInjectionProject/
 build/
 buildr/
 universal/
-# releases/
+releases/
 DerivedData/
