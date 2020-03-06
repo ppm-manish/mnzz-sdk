@@ -9,32 +9,27 @@ setup_git() {
 }
 
 commit_files() {
+    echo "git clone mnzz-ios"
+
+    git clone https://${TOKEN}:x-oauth-basic@github.com/ppm-manish/mnzz-ios.git
+    mkdir -p mnzz-ios/Framework
+    rm mnzz-ios/Framework/*
+    cp releases/Mnzz-iOS-$VERSION.tar.gz mnzz-ios/Framework/Mnzz-iOS-$VERSION.tar.gz
+    cd mnzz-ios
+    
     echo "commiting files"
     git remote -v
-  git checkout master
-  git add -f releases/Mnzz-iOS-$VERSION.tar.gz
+    git checkout master
+    git add Framework/Mnzz-iOS-$VERSION.tar.gz
     echo "git status before commit"
-  git status
-  git commit --message "Upload framework $VERSION"
+    git status
+    git commit --message "Upload framework $VERSION"
     echo "git status after commit"
-  git status
+    git status
     echo "git log after commit"
-  git log
-}
-
-upload_files() {
-    echo "uploading files"
-    echo ${TOKEN}
-  git remote add origin https://${TOKEN}:x-oauth-basic@github.com/ppm-manish/mnzz-ios.git > /dev/null 2>&1
-    git remote -v
-    echo "git remote set"
-    git pull
-    ls -l
-  git push -u origin master 
-    echo "git log after push"
     git log
+    git push -u origin master 
 }
 
 setup_git
 commit_files
-upload_files

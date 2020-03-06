@@ -17,10 +17,10 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.2</string>
 	<key>build</key>
 	<string>production-release</string>
 	<key>githash</key>
-	<string>59158d852a6a7be184f0f6aa5fdf68d59bb4c82f</string>
+	<string>3b6f41a9865aaf11571b07fd9848bcb72442bafb</string>
 </dict>
 </plist>
