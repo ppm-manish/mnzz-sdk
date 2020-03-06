@@ -10,6 +10,7 @@ setup_git() {
 
 commit_files() {
     echo "commiting files"
+    git remote -v
   git checkout master
   git add -f releases/Mnzz-iOS-$VERSION.tar.gz
     echo "git status before commit"
@@ -24,7 +25,7 @@ commit_files() {
 upload_files() {
     echo "uploading files"
     echo ${TOKEN}
-  git remote add origin https://${TOKEN}@github.com/ppm-manish/mnzz-ios.git > /dev/null 2>&1
+  git remote add origin https://${TOKEN}:x-oauth-basic@github.com/ppm-manish/mnzz-ios.git > /dev/null 2>&1
     git remote -v
     echo "git remote set"
     git pull
