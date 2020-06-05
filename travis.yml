@@ -18,4 +18,4 @@ script:
 - make production
 after_success:
   - ./push.sh
-  - ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" $tag releases/
+  - ghr -t $TOKEN -u ppm-manish -r mnzz-ios -c master -b "Mnzz SDK version $tag" -draft $tag releases/
